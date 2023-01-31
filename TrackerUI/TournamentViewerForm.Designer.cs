@@ -83,6 +83,7 @@
             // roundDropDownComboBox1
             // 
             this.roundDropDownComboBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roundDropDownComboBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.roundDropDownComboBox1.FormattingEnabled = true;
             this.roundDropDownComboBox1.Location = new System.Drawing.Point(111, 79);
             this.roundDropDownComboBox1.Name = "roundDropDownComboBox1";
