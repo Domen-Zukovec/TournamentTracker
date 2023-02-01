@@ -52,6 +52,7 @@
             this.headerLabel1.Size = new System.Drawing.Size(267, 50);
             this.headerLabel1.TabIndex = 24;
             this.headerLabel1.Text = "Ustvari nagrado";
+            this.headerLabel1.Click += new System.EventHandler(this.headerLabel1_Click);
             // 
             // PlaceNumberValueTextBox1
             // 
@@ -100,6 +101,7 @@
             this.priceAmountValueTextBox.Name = "priceAmountValueTextBox";
             this.priceAmountValueTextBox.Size = new System.Drawing.Size(186, 35);
             this.priceAmountValueTextBox.TabIndex = 30;
+            this.priceAmountValueTextBox.Text = "0";
             // 
             // priceAmountLabel
             // 
@@ -119,6 +121,7 @@
             this.prizePercantageValueTextBox.Name = "prizePercantageValueTextBox";
             this.prizePercantageValueTextBox.Size = new System.Drawing.Size(186, 35);
             this.prizePercantageValueTextBox.TabIndex = 32;
+            this.prizePercantageValueTextBox.Text = "0";
             // 
             // prizePercentageLabel
             // 
@@ -157,6 +160,7 @@
             this.createPrizeButton.TabIndex = 35;
             this.createPrizeButton.Text = "Ustvari nagrado";
             this.createPrizeButton.UseVisualStyleBackColor = true;
+            this.createPrizeButton.Click += new System.EventHandler(this.createPrizeButton_Click);
             // 
             // CreatePrizeForm
             // 
