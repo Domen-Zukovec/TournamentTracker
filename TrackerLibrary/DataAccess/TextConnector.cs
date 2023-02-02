@@ -9,10 +9,7 @@ namespace TrackerLibrary.DataAccess
 {
     public class TextConnector : IDataConnection
     {
-        // TODO - Write up the CreatePrze for text files.
-
-        
-        
+        // TODO - Write up the CreatePrze for text files
         public PrizeModel CreatePrize(PrizeModel model)
         {
             model.Id = 1;

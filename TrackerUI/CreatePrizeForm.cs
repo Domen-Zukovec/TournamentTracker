@@ -41,11 +41,9 @@ namespace TrackerUI
                     priceAmountValueTextBox.Text, 
                     prizePercantageValueTextBox.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
-                
+           
+                GlobalConfig.Connection.CreatePrize(model);
+
                 placeNameValueTextBox.Text = "";
                 PlaceNumberValueTextBox1.Text = "";
                 priceAmountValueTextBox.Text = "0";
