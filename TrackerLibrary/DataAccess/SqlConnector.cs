@@ -23,6 +23,7 @@ namespace TrackerLibrary.DataAccess
         /// </returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {
+
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
             {
                 var p = new DynamicParameters();
@@ -37,12 +38,7 @@ namespace TrackerLibrary.DataAccess
                 model.Id = p.Get<int>("@id");
 
                 return model;
-            }
+            }                      
         }
-
-        // TODO - Make the CreatePerson method actually save to the DB
-        
-        
-        
     }
 }

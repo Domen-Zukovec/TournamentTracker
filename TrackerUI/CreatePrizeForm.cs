@@ -45,6 +45,7 @@ namespace TrackerUI
                 {
                     db.CreatePrize(model);
                 }
+                
                 placeNameValueTextBox.Text = "";
                 PlaceNumberValueTextBox1.Text = "";
                 priceAmountValueTextBox.Text = "0";
@@ -81,7 +82,7 @@ namespace TrackerUI
             double prizePercentage = 0;
 
             bool prizeAmountValid = decimal.TryParse(priceAmountValueTextBox.Text, out prizeAmount);
-            bool prizePercentageValid = double.TryParse(priceAmountValueTextBox.Text, out prizePercentage);
+            bool prizePercentageValid = double.TryParse(prizePercantageValueTextBox.Text, out prizePercentage);
 
             if (!prizeAmountValid || !prizePercentageValid)
             {
@@ -98,8 +99,6 @@ namespace TrackerUI
                 output = false;
             }
             
-            
-
             return output;
         }
 
