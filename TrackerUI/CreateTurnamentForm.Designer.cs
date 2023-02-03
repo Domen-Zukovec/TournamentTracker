@@ -158,6 +158,7 @@
             this.headerLabel1.Size = new System.Drawing.Size(219, 50);
             this.headerLabel1.TabIndex = 14;
             this.headerLabel1.Text = "Ustvari turnir";
+            this.headerLabel1.Click += new System.EventHandler(this.headerLabel1_Click);
             // 
             // createNewTeamLinkLabel
             // 

@@ -46,7 +46,7 @@
             this.firstNameValueTextBox1 = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.teamMembersListBox = new System.Windows.Forms.ListBox();
-            this.deleteSelectedButton = new System.Windows.Forms.Button();
+            this.removeSelectedButton = new System.Windows.Forms.Button();
             this.createTeamButton = new System.Windows.Forms.Button();
             this.addNewMemberGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -90,12 +90,13 @@
             this.addMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.addMemberButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.addMemberButton.Location = new System.Drawing.Point(169, 264);
+            this.addMemberButton.Location = new System.Drawing.Point(172, 264);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.Size = new System.Drawing.Size(173, 44);
             this.addMemberButton.TabIndex = 30;
             this.addMemberButton.Text = "Dodaj igralca";
             this.addMemberButton.UseVisualStyleBackColor = true;
+            this.addMemberButton.Click += new System.EventHandler(this.addMemberButton_Click);
             // 
             // selectTeamMemberDropDownComboBox1
             // 
@@ -152,6 +153,7 @@
             this.createMemberButton.TabIndex = 31;
             this.createMemberButton.Text = "Ustvari igralca";
             this.createMemberButton.UseVisualStyleBackColor = true;
+            this.createMemberButton.Click += new System.EventHandler(this.createMemberButton_Click);
             // 
             // cellphoneValueTextBox
             // 
@@ -240,21 +242,23 @@
             this.teamMembersListBox.Name = "teamMembersListBox";
             this.teamMembersListBox.Size = new System.Drawing.Size(336, 542);
             this.teamMembersListBox.TabIndex = 32;
+            this.teamMembersListBox.SelectedIndexChanged += new System.EventHandler(this.teamMembersListBox_SelectedIndexChanged);
             // 
-            // deleteSelectedButton
+            // removeSelectedButton
             // 
-            this.deleteSelectedButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.deleteSelectedButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.deleteSelectedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.deleteSelectedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteSelectedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.deleteSelectedButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.deleteSelectedButton.Location = new System.Drawing.Point(746, 612);
-            this.deleteSelectedButton.Name = "deleteSelectedButton";
-            this.deleteSelectedButton.Size = new System.Drawing.Size(85, 42);
-            this.deleteSelectedButton.TabIndex = 33;
-            this.deleteSelectedButton.Text = "Izbriši";
-            this.deleteSelectedButton.UseVisualStyleBackColor = true;
+            this.removeSelectedButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.removeSelectedButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.removeSelectedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.removeSelectedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeSelectedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.removeSelectedButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.removeSelectedButton.Location = new System.Drawing.Point(632, 64);
+            this.removeSelectedButton.Name = "removeSelectedButton";
+            this.removeSelectedButton.Size = new System.Drawing.Size(108, 42);
+            this.removeSelectedButton.TabIndex = 33;
+            this.removeSelectedButton.Text = "Odstrani";
+            this.removeSelectedButton.UseVisualStyleBackColor = true;
+            this.removeSelectedButton.Click += new System.EventHandler(this.removeSelectedButton_Click);
             // 
             // createTeamButton
             // 
@@ -264,21 +268,22 @@
             this.createTeamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTeamButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.createTeamButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.createTeamButton.Location = new System.Drawing.Point(291, 660);
+            this.createTeamButton.Location = new System.Drawing.Point(546, 660);
             this.createTeamButton.Name = "createTeamButton";
             this.createTeamButton.Size = new System.Drawing.Size(194, 53);
             this.createTeamButton.TabIndex = 34;
             this.createTeamButton.Text = "Ustvari ekipo";
             this.createTeamButton.UseVisualStyleBackColor = true;
+            this.createTeamButton.Click += new System.EventHandler(this.createTeamButton_Click);
             // 
             // CreateTeamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(852, 725);
+            this.ClientSize = new System.Drawing.Size(767, 725);
             this.Controls.Add(this.createTeamButton);
-            this.Controls.Add(this.deleteSelectedButton);
+            this.Controls.Add(this.removeSelectedButton);
             this.Controls.Add(this.teamMembersListBox);
             this.Controls.Add(this.addNewMemberGroupBox);
             this.Controls.Add(this.addMemberButton);
@@ -319,7 +324,7 @@
         private Label emailLabel;
         private Button createMemberButton;
         private ListBox teamMembersListBox;
-        private Button deleteSelectedButton;
+        private Button removeSelectedButton;
         private Button createTeamButton;
     }
 }
